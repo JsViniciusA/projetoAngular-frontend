@@ -1,0 +1,14 @@
+<main>
+    <div class="grid-container" *ngIf="listaHerois">
+        <div class="card" *ngFor="let heroi of listaHerois">
+        <img src="{{ heroi?.images.lg }}" alt="" width="250px" >
+        <!-- pipe estrutural -->
+        <h2>{{ heroi?.name | uppercase }}</h2>
+        <!-- pipe personalizada -->
+        <p>{{ heroi?.work.occupation | desocupado }}</p>
+    </div>
+    </div>
+    <div class="semLista" *ngIf = "!listaHerois">
+        <h1> Carregando...</h1>
+    </div>
+</main>

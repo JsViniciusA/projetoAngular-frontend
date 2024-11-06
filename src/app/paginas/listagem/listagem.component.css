@@ -1,0 +1,13 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: 250px  250px  250px  250px;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+.card{
+    background: rgb(50, 50, 50);
+}
+.card h2, .card p{
+    color: white;
+}
