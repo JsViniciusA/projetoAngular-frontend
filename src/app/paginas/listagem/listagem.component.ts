@@ -7,12 +7,12 @@ import { ApiServiceService } from '../../services/api-service.service';
   styleUrl: './listagem.component.css'
 })
 export class ListagemComponent implements OnInit{
-  listaHerois: any=null;
+  listaProdutos: any=null;
 constructor(private api: ApiServiceService){}
 ngOnInit(){
-  this.api.getHerois().subscribe((dados: any)=>{
-    console.log(dados)
-    this.listaHerois = dados;
+  this.api.getProdutos().subscribe((data: any)=>{
+    console.log(data)
+    this.listaProdutos = data;
   })
   
 }

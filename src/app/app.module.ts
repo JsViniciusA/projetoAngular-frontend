@@ -7,7 +7,11 @@ import { HeaderComponent } from './componentes/header/header.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { BuscadorComponent } from './paginas/buscador/buscador.component';
 import { ListagemComponent } from './paginas/listagem/listagem.component';
-import { DesocupadoPipe } from './pipes/desocupado.pipe';
+import { AdicionadorComponent } from './paginas/adicionador/adicionador.component';
+import { SemPrecoPipe } from './pipes/sem-preco.pipe';
+import { AmpliaDirective } from './directives/amplia.directive';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DeslizaDirective } from './directives/desliza.directive';
 
 @NgModule({
   declarations: [
@@ -16,11 +20,15 @@ import { DesocupadoPipe } from './pipes/desocupado.pipe';
     FooterComponent,
     BuscadorComponent,
     ListagemComponent,
-    DesocupadoPipe
+    SemPrecoPipe,
+    AmpliaDirective,
+    AdicionadorComponent,
+    DeslizaDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule 
   ],
   providers: [
     provideClientHydration(),

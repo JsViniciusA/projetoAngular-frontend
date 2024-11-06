@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 *{
     margin: 0;
-    padding: 0;
+    padding: 7px;
     box-sizing: border-box;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-family: system-ui, -apple-system;
 }
