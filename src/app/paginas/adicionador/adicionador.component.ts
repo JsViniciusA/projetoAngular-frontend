@@ -5,19 +5,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-adicionador',
   templateUrl: './adicionador.component.html',
-  styleUrl: './adicionador.component.css'
+  styleUrls: ['./adicionador.component.css']
 })
-export class AdicionadorComponent implements OnInit{
-     // Definir um objeto para armazenar os dados do produto
-  produtoForm: any;
+export class AdicionadorComponent implements OnInit {
+  produtoForm!: FormGroup;
+
 
   constructor(
     private apiService: ApiServiceService,
-    private fb: FormBuilder // Serviço FormBuilder para criar o formulário
+    private fb: FormBuilder
   ) {}
 
   ngOnInit() {
-    // Inicializar o formulário com FormBuilder
     this.produtoForm = this.fb.group({
       title: ['', [Validators.required, Validators.maxLength(100)]],
       price: ['', [Validators.required, Validators.min(0)]],
@@ -27,7 +26,6 @@ export class AdicionadorComponent implements OnInit{
     });
   }
 
-  // Método para adicionar o produto
   adicionarProduto() {
     if (this.produtoForm.valid) {
       this.apiService.addProduto(this.produtoForm.value).subscribe(
@@ -41,4 +39,4 @@ export class AdicionadorComponent implements OnInit{
       );
     }
   }
-}  
+}
