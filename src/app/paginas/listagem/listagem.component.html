@@ -1,10 +1,10 @@
 <main>
     <div class="grid-container" *ngIf="listaProdutos">
-        <div class="card" *ngFor="let produto of listaProdutos">
+        <div class="card" *ngFor="let produto of listaProdutos" appAm>
         <img src="{{ produto?.image }}" alt="" width="250px" >
         <!-- pipe estrutural -->
-        <h2>{{ produto?.id }}.</h2>
-        <h3>{{ produto?.title | slice: 0:20 }}</h3>
+        <h2 appDesliza>{{ produto?.id }}.</h2>
+        <h3 appDesliza>{{ produto?.title | slice: 0:20}}</h3>
         <!-- pipe personalizada -->
         <p>{{ produto?.price | currency: 'BRL'}}</p>
     </div>

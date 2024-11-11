@@ -1,3 +1,4 @@
+
 <main> 
     <button>
       <div class="svg-wrapper-1">
@@ -8,8 +9,36 @@
           </svg>
         </div>
       </div>
-      <input type="text" (keyup.enter)="listaProdutos($event)"> 
-      <span>Buscar</span>
+      <input type="text" id="produto?.title" placeholder="Nome do Produto" #valor>
+      <span (click)="buscar(valor.value)">Buscar</span>
     </button>   
     </main>
     
+    <div class="produtoInfo" id="produto.id">
+    <h2 id="produto.title"></h2>
+    <img id="produto.image" src="produto?.image" alt="">
+    </div>
+
+    <script>
+      class ProdutoBuscador {
+          constructor(data) {
+              // Atribui data ao this.listaProdutos
+              this.listaProdutos = data;
+          }
+      
+          searchProduct() {
+              const produtoNome = document.getElementById("produto.title").value.trim();
+              const produtoInfo = this.listaProdutos[produtoNome];
+      
+              if (produtoInfo) {
+                  document.getElementById("produto.title").textContent = produto?.nome;
+                  document.getElementById("produto.image").src = produto?.imagem;
+                  document.getElementById("produto.info").style.display = "block";
+              } else {
+                  alert("Produto não encontrado!");
+                  document.getElementById("produto?.info").style.display = "none";
+              }
+          }
+
+        }
+        </script>

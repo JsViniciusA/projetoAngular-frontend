@@ -11,10 +11,11 @@ export class ApiServiceService {
   // criar o método de capitura get do endpoint da API
   //buscar uma listagem de produtos
   getProdutos(){
-    return this.http.get('https://fakestoreapi.com/products');
+    return this.http.get('https://fakestoreapi.com/products/');
   }
  
   addProduto(produto: any):  Observable<any>{
-    return this.http.post('https://fakestoreapi.com/products', produto);
+    console.log(produto)
+    return this.http.post('https://fakestoreapi.com/products?limit=', produto);
   }
 }

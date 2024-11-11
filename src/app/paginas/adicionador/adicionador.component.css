@@ -1,0 +1,114 @@
+/* From Uiverse.io by Shoh2008 */ 
+.form {
+    background-color:  rgba(14, 14, 95, 0.671);
+    border-radius: 50px;
+    box-sizing: border-box;
+    height: 760px;
+    padding: 20px;
+    width: 1070px;
+    display: grid;
+    font-weight: 600;
+    grid-template-columns: 950px;
+    justify-content: space-around;
+  
+  .title {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: 950px;
+  }
+  
+  .subtitle {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .price {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: 950px;
+  }
+  
+  .ic1 {
+    margin-top: 20px;
+  }
+  
+  .ic2 {
+    margin-top: 30px;
+  }
+  
+  .description {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: 950px;
+  }
+  
+  .category {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: 950px;
+  }
+  
+  .cut-short {
+    width: 30px;
+  }
+  
+  .input:focus ~ .cut,
+  .input:not(:placeholder-shown) ~ .cut {
+    transform: translateY(8px);
+  }
+  
+  .image {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: 950px;
+  }
+  
+  .input:focus ~ .placeholder,
+  .input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+  }
+  
+  .input:not(:placeholder-shown) ~ .placeholder {
+    color: #808097;
+  }
+  
+  .input:focus ~ .placeholder {
+    color: #dc2f55;
+  }
+  
+  .submit {
+    box-sizing: border-box;
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    grid-template-columns: 930px;
+    display: grid;
+    padding: 15px;
+    justify-content:left;
+  
+  .submit:active {
+    background-color: #06b;
+  }
+  
+}
+
+}
+
