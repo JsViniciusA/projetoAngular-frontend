@@ -11,11 +11,11 @@ export class ApiServiceService {
   // criar o método de capitura get do endpoint da API
   //buscar uma listagem de produtos
   getProdutos(){
-    return this.http.get('https://fakestoreapi.com/products/');
+    return this.http.get('https://api.disneyapi.dev/character');
   }
  
   addProduto(produto: any):  Observable<any>{
     console.log(produto)
-    return this.http.post('https://fakestoreapi.com/products?limit=', produto);
+    return this.http.post('https://github.com/iamaplahebetboy/DiscoX-API.git/', produto);
   }
 }
