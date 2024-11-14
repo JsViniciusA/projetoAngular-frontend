@@ -18,21 +18,7 @@ export class AmpliaDirective {
 
   @HostBinding('style.transform') transform = ''
 
-  @HostListener('click') centralizar(){
-    if(this.flag == true){
-      this.position = 'fixed'
-      this.top = 'calc(100vh - 250px)'
-      this.left = 'calc(100vh - 175px)'
-      this.flag = !this.flag
-
-    }
-  }
-  @HostListener('dbclick') resetar(){
-    if(this.flag == false){
-      this.position = 'static'
-      this.top = '0'
-    }
-  }
+  
   @HostBinding('style.position') position = ''
   @HostBinding('style.top') top = ''
   @HostBinding('style.left') left = ''

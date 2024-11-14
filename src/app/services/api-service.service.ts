@@ -16,6 +16,6 @@ export class ApiServiceService {
  
   addProduto(produto: any):  Observable<any>{
     console.log(produto)
-    return this.http.post('https://github.com/iamaplahebetboy/DiscoX-API.git/', produto);
+    return this.http.post('https://api.disneyapi.dev/character', produto);
   }
 }
