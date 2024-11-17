@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './buscador.component.css'
 })
 export class BuscadorComponent {
-personagem: any;
+personagem: any = '';
 constructor(private http: HttpClient) {}
 
 buscar(id: string) {
@@ -19,11 +19,17 @@ buscar(id: string) {
     return;
   }
 
-  const url = `https://api.disneyapi.dev/characters/${id}`;
+  const url = `https://api.disneyapi.dev/character/${id}`;
   console.log('URL sendo chamada:', url);
 
   this.http.get(url).subscribe({
-    next: (data) => console.log('Dados do personagem:', data),
+    next: (data: any) => {
+
+      console.log('Dados do personagem:', data)
+      const dado: any = data.data.name;
+      console.log(dado)
+      this.personagem = data;
+    },
     error: (error) => console.error('Erro ao buscar personagem:', error)
   });
 }

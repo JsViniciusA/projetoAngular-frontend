@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BuscaServiceService {
-  private apiUrl = 'https://api.disneyapi.dev/characters/{id}'; // URL base da API
+  private apiUrl = 'https://api.disneyapi.dev/character/{id}'; // URL base da API
   personagem: any
 
   constructor(private http: HttpClient) {}
