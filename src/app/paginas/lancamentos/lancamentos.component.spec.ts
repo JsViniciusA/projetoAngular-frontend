@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdicionadorComponent } from './adicionador.component';
+import { LancamentosComponent } from './lancamentos.component';
 
-describe('AdicionadorComponent', () => {
-  let component: AdicionadorComponent;
-  let fixture: ComponentFixture<AdicionadorComponent>;
+describe('LancamentosComponent', () => {
+  let component: LancamentosComponent;
+  let fixture: ComponentFixture<LancamentosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AdicionadorComponent]
+      declarations: [LancamentosComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdicionadorComponent);
+    fixture = TestBed.createComponent(LancamentosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

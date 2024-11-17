@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { BuscadorComponent } from './paginas/buscador/buscador.component';
 import { ListagemComponent } from './paginas/listagem/listagem.component';
-import { AdicionadorComponent } from './paginas/adicionador/adicionador.component';
-import { SemPrecoPipe } from './pipes/sem-preco.pipe';
+import { SemShowPipe } from './pipes/sem-show.pipe';
 import { AmpliaDirective } from './directives/amplia.directive';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DeslizaDirective } from './directives/desliza.directive';
+import { LancamentosComponent } from './paginas/lancamentos/lancamentos.component';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,15 +21,15 @@ import { DeslizaDirective } from './directives/desliza.directive';
     FooterComponent,
     BuscadorComponent,
     ListagemComponent,
-    SemPrecoPipe,
+    SemShowPipe,
     AmpliaDirective,
-    AdicionadorComponent,
-    DeslizaDirective
+    DeslizaDirective,
+    LancamentosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration(),

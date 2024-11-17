@@ -1,6 +1,14 @@
 header{
     height: 60px;
-    background: rgb(50, 50, 50);
+    background: rgb(28, 128, 50);
+}
+header img {
+    display: block;
+    margin-top: -110px; /* Move a imagem para cima */
+    position: relative; /* Permite usar deslocamento com top */
+    width: auto; /* Faz a imagem ocupar toda a largura do header */
+    height: 190px; /* Mantém a proporção da imagem */
+    justify-content: left; 
 }
 nav{
     height: 60px;

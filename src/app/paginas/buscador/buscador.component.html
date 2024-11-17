@@ -1,6 +1,6 @@
 
 <main> 
-    <button>
+  <button>
       <div class="svg-wrapper-1">
         <div class="svg-wrapper">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -9,36 +9,16 @@
           </svg>
         </div>
       </div>
-      <input type="text" id="produto?.title" placeholder="Nome do Produto" #valor>
-      <span (click)="buscar(valor.value)">Buscar</span>
-    </button>   
-    </main>
-    
-    <div class="produtoInfo" id="produto.id">
-    <h2 id="produto.title"></h2>
-    <img id="produto.image" src="produto?.image" alt="">
-    </div>
-
-    <script>
-      class ProdutoBuscador {
-          constructor(data) {
-              // Atribui data ao this.listaProdutos
-              this.listaProdutos = data;
-          }
-      
-          searchProduct() {
-              const produtoNome = document.getElementById("produto.title").value.trim();
-              const produtoInfo = this.listaProdutos[produtoNome];
-      
-              if (produtoInfo) {
-                  document.getElementById("produto.title").textContent = produto?.nome;
-                  document.getElementById("produto.image").src = produto?.imagem;
-                  document.getElementById("produto.info").style.display = "block";
-              } else {
-                  alert("Produto não encontrado!");
-                  document.getElementById("produto?.info").style.display = "none";
-              }
-          }
-
-        }
-        </script>
+      <input type="text" #idInput placeholder="Digite o ID do personagem" />
+      <span (click)="buscar(idInput.value)"> Buscar </span>
+  </button>
+    <!-- Exibir personagem, se encontrado -->
+  <div *ngIf="personagem">
+    <h2>{{ personagem.name }}</h2>
+    <p>ID: {{ personagem._id }}</p>
+    <img [src]="personagem.imageUrl" alt="{{ personagem.name }}" style="max-width: 300px;" />
+  </div>
+  
+  <!-- Mensagem caso nenhum personagem seja encontrado -->
+  <p *ngIf="!personagem && idInput.value">Nenhum personagem encontrado</p>
+  

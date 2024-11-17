@@ -1,30 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiServiceService } from '../../services/api-service.service';
+import { BuscaServiceService } from '../../services/busca-service.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-buscador',
   templateUrl: './buscador.component.html',
   styleUrl: './buscador.component.css'
 })
-export class BuscadorComponent implements OnInit {
-  listaProdutos: any = null;
-  produtos: any = null
+export class BuscadorComponent {
+personagem: any;
+constructor(private http: HttpClient) {}
 
-  constructor(private api: ApiServiceService) { }
-    ngOnInit(){
-    
+buscar(id: string) {
+  console.log('ID recebido:', id);
 
+  if (!id || isNaN(Number(id))) {
+    console.error('Por favor, insira um ID válido.');
+    return;
   }
-  buscar(obj:string){
-    this.api.getProdutos().subscribe((data:any)=>{
-      console.log(data)
-    })
-  }
+
+  const url = `https://api.disneyapi.dev/characters/${id}`;
+  console.log('URL sendo chamada:', url);
+
+  this.http.get(url).subscribe({
+    next: (data) => console.log('Dados do personagem:', data),
+    error: (error) => console.error('Erro ao buscar personagem:', error)
+  });
+}
+}
+  
   // ngOnInit(obj: any) {
   //   this.api.addProduto(obj.target.value)
   //     .subscribe({
   //       next: (data: any) => {
-  //         this.produtos = data
+  //         this.personagens = data
   //         console.log(data)
   //         // console.log(data.name)
   //         // console.log(data.id)
@@ -35,4 +44,3 @@ export class BuscadorComponent implements OnInit {
   //       }
   //     })
   // }
-}

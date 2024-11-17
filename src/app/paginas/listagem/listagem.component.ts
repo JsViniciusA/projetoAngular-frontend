@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from '../../services/api-service.service';
-import { AdicionadorComponent } from '../adicionador/adicionador.component';
 
 @Component({
   selector: 'app-listagem',
@@ -8,12 +7,12 @@ import { AdicionadorComponent } from '../adicionador/adicionador.component';
   styleUrl: './listagem.component.css'
 })
 export class ListagemComponent implements OnInit{
-  listaProdutos: any=null;
+  listaPersonagens: any=null;
 constructor(private api: ApiServiceService){}
 ngOnInit(){
-  this.api.getProdutos().subscribe((data: any)=>{
+  this.api.getPersonagens().subscribe((data: any)=>{
     console.log(data)
-    this.listaProdutos = data;
+    this.listaPersonagens = data;
   })
   
 }
