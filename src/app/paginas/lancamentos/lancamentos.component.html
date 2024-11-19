@@ -1,53 +1,51 @@
-
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo de Vídeos do YouTube</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            margin-top: 20px;
-            color: #333;
-        }
-        .video-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        iframe {
-            width: 560px;
-            height: 315px;
-            border: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout com 3 Unidades</title>
+  <link rel="stylesheet" href="lancamentos.component.css">
 </head>
 <body>
-
-    <h1 style="color: #ffffff;">Proximos Lançamentos Disney</h1>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/hDZ7y8RP5HE" title="Vídeo 1"></iframe>
-        <p class="video-text">Moana 2 </p>
-        <h2 class="video-text2">28 de Novembro de 2024</h2>
-    </div>    
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/TbiPcMCz0Ek" title="Vídeo 2"></iframe>
-        <p class="video-text">Branca de Neve</p>
-        <h2 class="video-text2">Março de 2025</h2>
-    </div>
-    <div class="video-container">    
-        <iframe src="https://www.youtube.com/embed/lMXh6vjiZrI" title="Vídeo 3"></iframe>
-        <p class="video-text">Mufasa</p>
-        <h2 class="video-text2">19 de Dezembro de 2024</h2>
+  <div class="container">
+  
+    <div class="unidade">
+      <div class="texto">
+        <h2>Moana 2 </h2>
+      </div>
+      <div class="texto">
+        <p>28 de Novembro de 2024 nos cinemas</p>
+      </div>
+      <div class="video">
+        <iframe width="320" height="180" src="https://www.youtube.com/embed/3ttBrGSEf6A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
 
+    <!-- Unidade 2 -->
+    <div class="unidade">
+      <div class="texto">
+        <h2>Mufasa: O Rei Leão</h2>
+      </div>
+      <div class="texto">
+        <p>19 de Dezembro de 2024 nos cinemas<p>
+      </div>
+      <div class="video">
+        <iframe width="320" height="180" src="https://www.youtube.com/embed/Cv6fKI3qB0Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Unidade 3 -->
+    <div class="unidade">
+      <div class="texto">
+        <h2>Branca de Neve</h2>
+      </div>
+      <div class="texto">
+        <p>Março de 2025 nos cinemas</p>
+      </div>
+      <div class="video">
+        <iframe width="320" height="180" src="https://www.youtube.com/embed/nZDqEm54n5s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

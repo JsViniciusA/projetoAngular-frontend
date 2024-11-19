@@ -1,58 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #43d6ca;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800vh;
+  padding: 20px;
+}
 
-button {
-  font-family: inherit;
-  font-size: 18px;
-  background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
+/* Estilo da container principal do buscador */
+.buscador-container {
+  background: linear-gradient(to top, rgb(66, 183, 223), darkblue);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center; /* Alinha os itens ao centro */
+  height: 100vh;
+}
+
+/* Estilo para o título (h1) */
+.buscador-container h1 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 20px; /* Espaço entre o título e a caixa de entrada */
+}
+
+/* Estilo da caixa de texto e botão de busca */
+.input-container {
+  display: flex;
+  justify-content: center; /* Alinha ao centro horizontalmente */
+  align-items: center; /* Alinha os itens verticalmente */
+  gap: 10px; /* Espaço entre o input e o botão */
+}
+
+/* Estilo da caixa de texto (input) */
+.input-container input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Estilo do botão de busca */
+.input-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
   color: white;
-  padding: 0.8em 1.2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: none;
-  border-radius: 25px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+.input-container button:hover {
+  background-color: #0056b3; /* Cor de hover para o botão */
 }
 
-button:active {
-  transform: scale(0.95);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+/* Estilo para a mensagem de erro */
+.error {
+  color: red;
+  font-size: 24px;
+  margin-top: 10px;
+  text-align: center;
 }
 
-button span {
-  display: block;
-  margin-left: 0.4em;
-  transition: all 0.3s;
+/* Estilo para a exibição de resultados */
+.resultado {
+  margin-top: 20px;
+  text-align: center;
 }
 
-button svg {
-  width: 18px;
-  height: 18px;
-  fill: white;
-  transition: all 0.3s;
+.resultado h2 {
+  font-size: 20px;
+  color: #8b8686;
 }
 
-button .svg-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin-right: 0.5em;
-  transition: all 0.3s;
+.resultado p {
+  font-size: 16px;
+  color: #807f7f;
 }
 
-button:hover .svg-wrapper {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-button:hover svg {
-  transform: rotate(45deg);
+.resultado img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

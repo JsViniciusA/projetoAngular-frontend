@@ -12,7 +12,7 @@ import { AmpliaDirective } from './directives/amplia.directive';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DeslizaDirective } from './directives/desliza.directive';
 import { LancamentosComponent } from './paginas/lancamentos/lancamentos.component';
-import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { HttpClient } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule 
   ],
   providers: [
     provideClientHydration(),

@@ -1,52 +1,41 @@
-import { Component, OnInit } from '@angular/core';
-import { BuscaServiceService } from '../../services/busca-service.service';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-buscador',
   templateUrl: './buscador.component.html',
-  styleUrl: './buscador.component.css'
+  styleUrls: ['./buscador.component.css']
 })
 export class BuscadorComponent {
-personagem: any = '';
-constructor(private http: HttpClient) {}
+  nomePersonagem: string = ''; // Nome digitado pelo usuário
+  personagem: any = null; // Dados do personagem retornados pela API
+  erro: string = ''; // Mensagem de erro, se houver
 
-buscar(id: string) {
-  console.log('ID recebido:', id);
+  constructor(private http: HttpClient) {}
 
-  if (!id || isNaN(Number(id))) {
-    console.error('Por favor, insira um ID válido.');
-    return;
+  buscarPersonagem() {
+    if (!this.nomePersonagem.trim()) {
+      this.erro = 'Por favor, insira um nome de personagem.';
+      this.personagem = null;
+      return;
+    }
+
+    const apiUrl = `https://api.disneyapi.dev/character?name=${this.nomePersonagem}`;
+    
+    this.http.get(apiUrl).subscribe({
+      next: (response: any) => {
+        if (response.data && response.data.length > 0) {
+          this.personagem = response.data[0]; // Seleciona o primeiro resultado
+          this.erro = '';
+        } else {
+          this.erro = 'Nenhum personagem encontrado.';
+          this.personagem = null;
+        }
+      },
+      error: (error) => {
+        this.erro = 'Erro ao buscar personagem. Tente novamente mais tarde.';
+        console.error(error);
+      }
+    });
   }
-
-  const url = `https://api.disneyapi.dev/character/${id}`;
-  console.log('URL sendo chamada:', url);
-
-  this.http.get(url).subscribe({
-    next: (data: any) => {
-
-      console.log('Dados do personagem:', data)
-      const dado: any = data.data.name;
-      console.log(dado)
-      this.personagem = data;
-    },
-    error: (error) => console.error('Erro ao buscar personagem:', error)
-  });
 }
-}
-  
-  // ngOnInit(obj: any) {
-  //   this.api.addProduto(obj.target.value)
-  //     .subscribe({
-  //       next: (data: any) => {
-  //         this.personagens = data
-  //         console.log(data)
-  //         // console.log(data.name)
-  //         // console.log(data.id)
-  //         // console.log(data.sprites.other['official-artwork'].front_default)
-  //       },
-  //       error: (error: any) => {
-  //         console.log(error)
-  //       }
-  //     })
-  // }

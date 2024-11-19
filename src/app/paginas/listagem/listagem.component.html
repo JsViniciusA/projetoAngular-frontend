@@ -1,10 +1,12 @@
+
 <body>
     <main>
+        <h1>Lista de Personagens da Disney</h1>
         <div class="grid-container" *ngIf="listaPersonagens">
             <div class="card" *ngFor="let personagem of listaPersonagens.data" appAmplia>
-            <img src="{{ personagem?.imageUrl }}" alt="" width="290px" >
+            <img src="{{ personagem?.imageUrl }}" alt="" >
             <!-- pipe estrutural -->
-            <h2 appDesliza> {{ personagem?.id }}</h2> 
+           <div class="container1"> <h2 appDesliza> {{ personagem?.id }}</h2> </div>
             <h2 appDesliza>{{ personagem?.films }}.</h2>
             <h3 appDesliza>Personagem: {{ personagem?.name | uppercase }}</h3>
             <!-- pipe personalizada -->

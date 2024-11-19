@@ -1,13 +1,10 @@
 header{
     height: 60px;
-    background: rgb(28, 128, 50);
+    background: rgb(61, 115, 233);
 }
 header img {
     display: block;
-    margin-top: -110px; /* Move a imagem para cima */
-    position: relative; /* Permite usar deslocamento com top */
-    width: auto; /* Faz a imagem ocupar toda a largura do header */
-    height: 190px; /* Mantém a proporção da imagem */
+    margin-top: auto; 
     justify-content: left; 
 }
 nav{
@@ -15,8 +12,9 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    color: red;
 }
 nav a{
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 5px;
 }
